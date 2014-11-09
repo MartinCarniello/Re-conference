@@ -1,7 +1,24 @@
 LaReConference::App.controllers :crear_conferencia do
   
   get :crear_conferencia, :map => '/crear_conferencia' do
+    @conferencia = Conferencia.new
     render 'crear_conferencia/index'
   end
+
+  post :create do
+    	titulo = params[:conferencia][:titulo]
+    	descripcion = params[:conferencia][:descripcion]
+    	fecha = Date::strptime(params[:conferencia][:fecha], "%d-%m-%Y")
+
+    	conferencia = Conferencia.create(titulo: titulo, descripcion: descripcion, fecha: fecha)
+
+    	if conferencia.save
+      		flash[:success] = 'Conferencia creada'
+      		redirect '/'
+    	else
+      		flash.now[:error] = 'Todos los campos son necesarios'
+      		render 'crear_conferencia/index'
+    	end
+  	end
   
 end

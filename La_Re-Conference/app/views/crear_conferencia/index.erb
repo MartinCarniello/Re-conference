@@ -1,0 +1,23 @@
+<div class="container">
+	<% form_for(@conferencia, '/crear_conferencia/create', html: { class: "form-inline" }) do |f| %>
+		<div class="form-group">
+			<%= f.label :título %>
+			<br>
+			<%= f.text_field :titulo, class: "form-control", placeholder: "Título de la conferencia" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :descripción %>
+			<br>
+		 	<%= f.text_field :descripcion, class: "form-control", placeholder: "Descripción de la conferencia" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :fecha %>
+			<%= f.text_field :fecha, class: "form-control", placeholder: "Fecha de la conferencia. EJ: 30-12-2014" %>
+		</div>
+
+		<br/>
+		<%= f.submit "Crear", :id => "conferencia_crear", class: "btn btn-large btn-info" %>
+	<% end %>
+</div>
