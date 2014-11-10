@@ -8,6 +8,20 @@
 	    <%= javascript_include_tag 'bootstrap.min', 'jquery', 'jquery-ujs' %>
 	</head>
 	<body>
-    <%= yield %>
+		<div class="container">
+			<div class="error" id="zen-preamble" role="article">
+				<h3>
+					<%= [:error, :warning, :notice].map { |type| flash_tag(type, :class => "alert alert-#{type} fade in", :bootstrap => false) }.join.html_safe %>	
+				</h3>
+			</div>
+			
+			<div class="exito" id="zen-preamble" role="article">
+				<h3>
+					<%= [:success].map { |type| flash_tag(type, :class => "alert alert-#{type} fade in", :bootstrap => false) }.join.html_safe %>	
+				</h3>
+			</div>
+	    	
+	    	<%= yield %>
+	    </div>
 	</body>
 </html>

@@ -3,11 +3,8 @@ class Conferencia
 
   # property <name>, <type>
   property :id, Serial
-  property :titulo, String
-  property :descripcion, String
-  property :fecha, Date
+  property :titulo, String, required: true
+  property :descripcion, String, required: true
+  property :fecha, Date, required: true
 
-  validates_presence_of :titulo
-  validates_presence_of :descripcion
-  validates_presence_of :fecha
 end
