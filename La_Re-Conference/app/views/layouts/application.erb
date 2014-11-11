@@ -10,7 +10,7 @@
 	<body>
 		<%= render_partial 'parciales/navegador' %>
 
-		<div class="container">
+		<div class="container contenedor-opciones">
 			<div class="error" id="zen-preamble" role="article">
 				<h3>
 					<%= [:error, :warning, :notice].map { |type| flash_tag(type, :class => "alert alert-#{type} fade in", :bootstrap => false) }.join.html_safe %>	
@@ -24,6 +24,8 @@
 			</div>
 	    	
 	    	<%= yield %>
+
+	    	<%= render_partial 'parciales/footer' %>
 
 	    </div>
 	</body>
