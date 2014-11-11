@@ -10,5 +10,4 @@ Then(/^me redirecciona a la pagina de creacion de conferencia$/) do
   expect(@browser.url).to match "localhost:3000/crear_conferencia"
   expect(@browser.text_field(id: "conferencia_titulo").present?).to eq true
   expect(@browser.text_field(id: "conferencia_descripcion").present?).to eq true
-  expect(@browser.text_field(id: "conferencia_fecha").present?).to eq true
 end
