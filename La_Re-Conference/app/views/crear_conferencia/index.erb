@@ -17,5 +17,9 @@
 	</div>
 
 	<br/>
-	<%= f.submit "Crear", :id => "conferencia_crear", class: "btn btn-large btn-info" %>
+	<div class="text-center">
+		<%= f.submit "Crear", :id => "conferencia_crear", class: "btn btn-primary btn-lg btn-info" %>
+	    <%= link_to "Volver", url(:home, :index), :class => "btn btn-primary btn-lg btn-info" %>
+	</div>
+ 
 <% end %>
