@@ -1,6 +1,7 @@
 LaReConference::App.controllers :crear_conferencia do
   
   get :crear_conferencia, :map => '/crear_conferencia' do
+    @crear_conferencia_active = "active"
     @conferencia = Conferencia.new
     render 'crear_conferencia/index'
   end

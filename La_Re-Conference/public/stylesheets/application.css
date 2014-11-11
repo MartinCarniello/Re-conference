@@ -2,3 +2,7 @@ body {
 	background-image: url('/images/Conferencia.jpg');
 	background-repeat: no-repeat;
 }
+
+.contenedor-opciones {
+	margin-top: 10%;
+}

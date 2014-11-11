@@ -1,25 +1,31 @@
-<% form_for(@conferencia, '/crear_conferencia/create', html: { class: "form-inline" }) do |f| %>
-	<div class="form-group">
-		<%= f.label :título %>
-		<br>
-		<%= f.text_field :titulo, class: "form-control", placeholder: "Título de la conferencia", required: true %>
-	</div>
+<div class="jumbotron contenedor-opciones">
+	<h2 class="text-center"> Creación de conferencias </h2>
 
-	<div class="form-group">
-		<%= f.label :descripción %>
-		<br>
-	 	<%= f.text_field :descripcion, class: "form-control", placeholder: "Descripción de la conferencia", required: true %>
-	</div>
+	<hr>
 
-	<div class="form-group">
-		<%= f.label :fecha %>
-		<%= f.text_field :fecha, class: "form-control", placeholder: "Fecha de la conferencia. EJ: 30-12-2014", type: "date", required: true %>
-	</div>
+	<% form_for(@conferencia, '/crear_conferencia/create', html: { class: "form-inline" }) do |f| %>
+		<div class="form-group">
+			<%= f.label :título %>
+			<br>
+			<%= f.text_field :titulo, class: "form-control", placeholder: "Título de la conferencia", required: true %>
+		</div>
 
-	<br/>
-	<div class="text-center">
-		<%= f.submit "Crear", :id => "conferencia_crear", class: "btn btn-primary btn-lg btn-info" %>
-	    <%= link_to "Volver", url(:home, :index), :class => "btn btn-primary btn-lg btn-info" %>
-	</div>
- 
-<% end %>
+		<div class="form-group">
+			<%= f.label :descripción %>
+			<br>
+		 	<%= f.text_field :descripcion, class: "form-control", placeholder: "Descripción de la conferencia", required: true %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :fecha %>
+			<%= f.text_field :fecha, class: "form-control", placeholder: "Fecha de la conferencia. EJ: 30-12-2014", type: "date", required: true %>
+		</div>
+
+		<br/>
+		<div class="text-center">
+			<%= f.submit "Crear", :id => "conferencia_crear", class: "btn btn-primary btn-lg btn-info" %>
+		    <%= link_to "Volver", url(:home, :index), :class => "btn btn-primary btn-lg btn-info" %>
+		</div>
+	 
+	<% end %>
+</div>

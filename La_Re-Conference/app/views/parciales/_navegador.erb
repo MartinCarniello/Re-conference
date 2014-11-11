@@ -1,0 +1,18 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="#">La Re-Conference</a>
+   </div>
+   <div>
+      <ul class="nav navbar-nav pull-right">
+         <li class="<%= @home_active %>">
+            <%= link_to 'Home', url_for(:home, :index), id: "home" %>
+         </li>
+         <li class="<%= @crear_conferencia_active %>">
+            <%= link_to 'Crear Conferencia', url_for(:crear_conferencia, :crear_conferencia), id: "crear_conferencia" %>
+         </li>
+         <li class="<%= @ver_conferencias_active %>">
+            <%= link_to 'Ver Conferencias', url_for(:ver_conferencias, :ver_conferencias), id: "ver_conferencias" %>
+         </li>
+      </ul>
+   </div>
+</nav>

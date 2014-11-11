@@ -8,6 +8,8 @@
 	    <%= javascript_include_tag 'bootstrap.min', 'jquery', 'jquery-ujs' %>
 	</head>
 	<body>
+		<%= render_partial 'parciales/navegador' %>
+		<br><br><br>
 		<div class="container">
 			<div class="error" id="zen-preamble" role="article">
 				<h3>
@@ -17,11 +19,13 @@
 			
 			<div class="exito" id="zen-preamble" role="article">
 				<h3>
-					<%= [:success].map { |type| flash_tag(type, :class => "alert alert-#{type} fade in", :bootstrap => false) }.join.html_safe %>	
+					<%= [:success].map { |type| flash_tag(type, :class => "alert alert-#{type} fade in", :bootstrap => false) }.join.html_safe %>
 				</h3>
 			</div>
 	    	
 	    	<%= yield %>
+
+	    	<%= render_partial 'parciales/footer' %>
 	    </div>
 	</body>
 </html>

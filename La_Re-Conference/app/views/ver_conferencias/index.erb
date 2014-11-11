@@ -1,31 +1,42 @@
-<div class="jumbotron">
-  <div class="container">
-    <h3 class="text-center"> Tabla de conferencias </h3>
-    <table class="table table-striped" border="1">
-      <tr>
-        <th align="center">Nombre</th>
-        <th align="center">Descripción</th>
-        <th align="center">Fecha</th>
-      </tr>
-      <% @conferencias.each do | conferencia | %>
-          <tr>
-            <td align="center">
-              <%= conferencia.titulo %>
-            </td>
-            <td align="center">
-              <%= conferencia.descripcion%>
-            </td>
-            <td align="center">
-              <%= conferencia.fecha%>
-            </td>
-          </tr>
-      <% end %>
-    </table>
+<div class="jumbotron contenedor-opciones">
     
-    <br>
-    
-    <div class="text-center">
-      <%= link_to "Volver", url(:home, :index), :class => "btn btn-large btn-info" %>
-    </div>
+  <h2 class="text-center"> Tabla de conferencias </h2>
+  
+  <hr>
+
+  <table class="table table-striped" border="1">
+    <tr>
+      <th class="text-center" align="center">Nombre</th>
+      <th class="text-center" align="center">Descripción</th>
+      <th class="text-center" align="center">Fecha</th>
+      <th class="text-center" align="center">Visualizar</th>
+    </tr>
+    <% @conferencias.each do | conferencia | %>
+        <tr>
+          
+          <td align="center">
+            <%= conferencia.titulo %>
+          </td>
+          
+          <td align="center">
+            <%= conferencia.descripcion%>
+          </td>
+          
+          <td align="center">
+            <%= conferencia.fecha%>
+          </td>
+
+          <td align="center">
+            <%= link_to "Ver", :class => "btn btn-large btn-info" %>
+          </td>
+
+        </tr>
+    <% end %>
+  </table>
+  
+  <br>
+  
+  <div class="text-center">
+    <%= link_to "Volver", url(:home, :index), :class => "btn btn-primary btn-lg btn-info" %>
   </div>
 </div>
