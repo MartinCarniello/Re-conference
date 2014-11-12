@@ -2,7 +2,7 @@ Feature: Como usuario, quiero poder ver todas las conferencias que han sido crea
 
 	Background:
 		Given que me dirijo a la pagina de creacion de conferencia
-		And seteo el titulo de la conferencia "RubyConf"
+		And seteo el titulo de la conferencia "RubyConfTestVerConferencia"
 		And seteo la descripcion de la conferencia "Conferencia internacional de Ruby situada esta vez en Argentina"
 		And seteo el dia 30, mes 12 y año 2014 de la conferencia
 		When clickeo el boton de crear conferencia

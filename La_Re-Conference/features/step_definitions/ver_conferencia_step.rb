@@ -3,6 +3,5 @@ Given(/^que me dirijo a la pagina de ver conferencias$/) do
 end
 
 Then(/^puedo ver la conferencia que he creado$/) do
-	# expect(@browser.table.tr(index: 0).td.text).to eq (/RubyConf/)
-	expect(@browser.ul.li(index: 0).text).to match(/RubyConf/)
+	expect(@browser.table.tr(index: 1).td.text).to match(/RubyConfTestVerConferencia/)
 end
