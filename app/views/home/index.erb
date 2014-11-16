@@ -1,5 +1,52 @@
-<div class="jumbotron text-center">
+<div class="jumbotron text-right">
 
-	<h1>Logueo y Registración</h1>
+	<div class="jumbotron">
+
+	<div class="form-group" align="right">
+		<h2 class="text-right"> Nuevo usuario </h2>
+	</div>
+
+	<hr>
+
+	<% form_for(@usuario, '/home/create', html: { class: "form-inline" }) do |f| %>
+
+		<div class="form-group" align="left">
+			<%= f.label :tipo_de_usuario %>
+			<br>
+			<select>
+  				<option value ="organizador">Organizador</option>
+  				<option value ="evaluador">Evaluador</option>
+			</select> 
+		</div>
+
+		<div class="form-group" align="left">
+			<%= f.label :nombre %>
+			<br>
+			<%= f.text_field :nombre, class: "form-control", placeholder: "Nombre del usuario", required: true %>
+		</div>
+
+		<div class="form-group" align="left">
+			<%= f.label :email %>
+			<br>
+		 	<%= f.text_field :email, class: "form-control", placeholder: "Su e-mail", required: true %>
+		</div>
+
+		<div class="form-group" align="left">
+			<%= f.label :contraseña %>
+			<%= f.password_field :password, class: "form-control", placeholder: "Contraseña (Mínimo 8 caracteres, 1 mayúscula y 1 minúscula)" ,required: true %>
+		</div>
+
+		<div class="form-group" align="left">
+			<%= f.label :confirme_contraseña %>
+			<%= f.password_field :confirme_password, class: "form-control", placeholder: "Confirme su contraseña" ,required: true %>
+		</div>
+
+		<br/>
+		<div class="text-center" align="left">
+			<%= f.submit "Registrar", :id => "usuario_crear", class: "btn btn-primary btn-lg btn-info" %>
+		</div>
+	 
+	<% end %>
+</div>
 
 </div>
