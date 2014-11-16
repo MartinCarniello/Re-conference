@@ -1,3 +1,3 @@
-require 'debugger'
+# require 'debugger'
 require 'watir-webdriver'
 require 'headless'
