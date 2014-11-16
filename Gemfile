@@ -36,7 +36,7 @@ gem 'headless', :group => 'test'
 gem 'padrino', '0.12.4'
 
 # Debugger
-gem 'debugger'
+# gem 'debugger'
 
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'
