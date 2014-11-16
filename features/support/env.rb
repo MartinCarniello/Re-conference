@@ -4,7 +4,11 @@ headless = Headless.new
 headless.start
 
 Before do |scenario|
-	@browser = Watir::Browser.new :chrome
+	if ENV['PADRINO_ENV'] == "travis"
+		@browser = Watir::Browser.new
+	else
+		@browser = Watir::Browser.new :chrome
+	end
 end
 
 at_exit do
