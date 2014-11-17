@@ -24,6 +24,7 @@ gem 'dm-constraints'
 gem 'dm-aggregates'
 gem 'dm-types'
 gem 'dm-core'
+gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # Test requirements
 gem 'rspec', :group => 'test'

@@ -1,0 +1,49 @@
+<div class="jumbotron">
+
+	<h2 class="text-center"> Nuevo usuario </h2>
+
+	<hr>
+
+	<% form_for(@usuario, '/registrar_usuario/create', html: { class: "form-inline" }) do |f| %>
+
+		<div class="form-group" align="left">
+			<%= f.label :tipo_de_usuario %>
+			<br>
+			<select>
+  				<option value ="organizador">Organizador</option>
+  				<option value ="evaluador">Evaluador</option>
+			</select>
+		</div>
+
+		<div class="form-group" align="left">
+			<%= f.label :nombre %>
+			<br>
+			<%= f.text_field :nombre, class: "form-control", placeholder: "Nombre del usuario", required: true %>
+		</div>
+
+		<div class="form-group" align="left">
+			<%= f.label :email %>
+			<br>
+		 	<%= f.text_field :email, class: "form-control", placeholder: "Su e-mail", required: true %>
+		</div>
+
+		<div class="form-group" align="left">
+			<%= f.label :contraseña %>
+			<%= f.password_field :password, class: "form-control", placeholder: "Contraseña (Mínimo 8 caracteres, 1 mayúscula y 1 minúscula)" ,required: true %>
+		</div>
+
+		<div class="form-group" align="left">
+			<%= f.label :confirme_contraseña %>
+			<%= f.password_field :confirme_password, class: "form-control", placeholder: "Confirme su contraseña" ,required: true %>
+		</div>
+
+		<br/>
+		
+		<div class="text-center" align="left">
+			<%= f.submit "Registrar", :id => "usuario_crear", class: "btn btn-primary btn-lg btn-info" %>
+			<%= link_to 'Volver', url_for(:home, :index), id: "usuario_registrar", class: "btn btn-primary btn-lg btn-info" %>
+		</div>
+	 
+	<% end %>
+
+</div>

@@ -153,6 +153,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby
   cucumber
   dm-aggregates
   dm-constraints

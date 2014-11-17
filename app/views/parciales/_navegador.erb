@@ -7,12 +7,16 @@
          <li class="<%= @home_active %>">
             <%= link_to 'Home', url_for(:home, :index), id: "home" %>
          </li>
-         <li class="<%= @crear_conferencia_active %>">
-            <%= link_to 'Crear Conferencia', url_for(:crear_conferencia, :crear_conferencia), id: "crear_conferencia" %>
-         </li>
-         <li class="<%= @ver_conferencias_active %>">
-            <%= link_to 'Ver Conferencias', url_for(:ver_conferencias, :ver_conferencias), id: "ver_conferencias" %>
-         </li>
+         <% if logueado? %>
+            <% #if usuario_actual.crear_conferencia %>
+               <li class="<%= @crear_conferencia_active %>">
+                  <%= link_to 'Crear Conferencia', url_for(:crear_conferencia, :crear_conferencia), id: "crear_conferencia" %>
+               </li>
+            <% #end %>
+            <li class="<%= @ver_conferencias_active %>">
+               <%= link_to 'Ver Conferencias', url_for(:ver_conferencias, :ver_conferencias), id: "ver_conferencias" %>
+            </li>
+         <% end %>
       </ul>
    </div>
 </nav>

@@ -1,52 +1,41 @@
-<div class="jumbotron text-right">
+<div class="jumbotron">
 
-	<div class="jumbotron">
+	<% if !logueado? %>
+		<h2 class="text-center"> Login </h2>
 
-	<div class="form-group" align="right">
-		<h2 class="text-right"> Nuevo usuario </h2>
-	</div>
+		<hr>
 
-	<hr>
+		<% form_for(@usuario, '/home/login', html: { class: "form-inline" }) do |f| %>
 
-	<% form_for(@usuario, '/home/create', html: { class: "form-inline" }) do |f| %>
+			<div class="form-group" align="left">
+				<%= f.label :nombre %>
+				<br>
+				<%= f.text_field :nombre, class: "form-control", placeholder: "Nombre del usuario", required: true %>
+			</div>
 
-		<div class="form-group" align="left">
-			<%= f.label :tipo_de_usuario %>
-			<br>
-			<select>
-  				<option value ="organizador">Organizador</option>
-  				<option value ="evaluador">Evaluador</option>
-			</select> 
+			<div class="form-group" align="left">
+				<%= f.label :contraseña %>
+				<%= f.password_field :password, class: "form-control", placeholder: "Contraseña" ,required: true %>
+			</div>
+
+			<br/>
+			
+			<div class="text-center" align="left">
+				<%= f.submit "Login", :id => "usuario_crear", class: "btn btn-primary btn-lg btn-info" %>
+				<%= link_to 'Registrar', url_for(:registrar_usuario, :registrar_usuario), id: "usuario_registrar", class: "btn btn-primary btn-lg btn-info" %>
+			</div>
+		 
+		<% end %>
+
+		<div class="text-center">
+			
 		</div>
-
-		<div class="form-group" align="left">
-			<%= f.label :nombre %>
-			<br>
-			<%= f.text_field :nombre, class: "form-control", placeholder: "Nombre del usuario", required: true %>
+	<% else %>
+		<div class="text-center">
+			<h2> Bienvenido <% usuario_actual.nombre %> </h2>
+			<hr>
+			<%= link_to 'Logout', url_for(:home, :logout), id: "usuario_logout", class: "btn btn-primary btn-lg btn-info" %>
 		</div>
-
-		<div class="form-group" align="left">
-			<%= f.label :email %>
-			<br>
-		 	<%= f.text_field :email, class: "form-control", placeholder: "Su e-mail", required: true %>
-		</div>
-
-		<div class="form-group" align="left">
-			<%= f.label :contraseña %>
-			<%= f.password_field :password, class: "form-control", placeholder: "Contraseña (Mínimo 8 caracteres, 1 mayúscula y 1 minúscula)" ,required: true %>
-		</div>
-
-		<div class="form-group" align="left">
-			<%= f.label :confirme_contraseña %>
-			<%= f.password_field :confirme_password, class: "form-control", placeholder: "Confirme su contraseña" ,required: true %>
-		</div>
-
-		<br/>
-		<div class="text-center" align="left">
-			<%= f.submit "Registrar", :id => "usuario_crear", class: "btn btn-primary btn-lg btn-info" %>
-		</div>
-	 
 	<% end %>
-</div>
 
 </div>
