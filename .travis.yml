@@ -1,16 +1,19 @@
 language: ruby
 version: 1.9.3
+
 before_script:
+  - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-script:
-  - bundle exec padrino start
-  - PADRINO_ENV=travis bundle exec rake
+  - sleep 3 # give xvfb some time to start
+  - bundle exec padrino start & # start a Web server
+  - sleep 3 # give Web server some time to bind to sockets, etc
+
+script: PADRINO_ENV=travis bundle exec rake
 
 branches:
-only:
-- master
+only: master
 notifications:
-	email:
-	- jonakoelbl@gmail.com
-	- martincarniello@gmail.com
-	- egabrielt@gmail.com
+email:
+- jonakoelbl@gmail.com
+- martincarniello@gmail.com
+- egabrielt@gmail.com
