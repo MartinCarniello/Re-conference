@@ -2,4 +2,15 @@ language: ruby
 version: 1.9.3
 before_script:
   - "sh -e /etc/init.d/xvfb start"
-script: PADRINO_ENV=travis bundle exec rake
+script:
+  - bundle exec padrino start
+  - PADRINO_ENV=travis bundle exec rake
+
+branches:
+only:
+- master
+notifications:
+	email:
+	- jonakoelbl@gmail.com
+	- martincarniello@gmail.com
+	- egabrielt@gmail.com
