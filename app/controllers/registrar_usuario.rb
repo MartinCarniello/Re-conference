@@ -11,7 +11,7 @@ LaReConference::App.controllers :registrar_usuario do
       email = params[:usuario][:email]
       password = params[:usuario][:password]
       confirme_password = params[:usuario][:confirme_password]
-      tipo_de_usuario = params[:usuario][:tipo_de_usuario]
+      rol = params[:usuario][:rol_de_usuario]
 
       if !Usuario.first(nombre: nombre)
 
@@ -25,7 +25,7 @@ LaReConference::App.controllers :registrar_usuario do
             #   @usuario = Evaluador.new(nombre: nombre, password: password, email: email)
             # end
 
-            @usuario = Usuario.new(nombre: nombre, password: password, email: email)
+            @usuario = Usuario.new(nombre: nombre, password: password, email: email, rol: rol)
 
             (tipo_flash, mensaje) = (@usuario.save ? [:success, 'Usuario creado'] : [:error, 'Todos los campos son obligatorios, asegurese de que su password incluya al menos 1 mayuscula, 1 minuscula y sea de al menos 8 caracteres'])
 
