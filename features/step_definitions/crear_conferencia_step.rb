@@ -11,10 +11,15 @@ Given(/^seteo la descripcion de la conferencia "(.*?)"$/) do |descripcion|
 end
 
 Given(/^seteo el dia (\d+), mes (\d+) y anio (\d+) de la conferencia$/) do |dia, mes, anio|
-	@browser.input(id: "conferencia_fecha").click
-	@browser.send_keys(dia.to_i)
-	@browser.send_keys(mes.to_i)
-	@browser.send_keys(anio.to_i)
+	
+	if ENV['PADRINO_ENV'] == "travis"
+		@browser.text_field(id: "conferencia_fecha").set "#{dia}-#{mes}-#{anio}"
+	else
+		@browser.input(id: "conferencia_fecha").click
+		@browser.send_keys(dia.to_i)
+		@browser.send_keys(mes.to_i)
+		@browser.send_keys(anio.to_i)
+	end
 end
 
 When(/^clickeo el boton de crear conferencia$/) do
