@@ -5,18 +5,18 @@
 #		And seteo el nombre de usuario "usuarioorganizador"
 #		And seteo la contrasenia "123456"
 #		And seteo el email "usuarioorganizador@gmail.com"
-#		And seteo el rol "organizador"
+#		And seteo el rol "Organizador"
 #		When clickeo el boton de registrar usuario
-		#Then me redirecciona a la pagina donde me dice que el usuario ha sido registrado como organizador
+#		Then me redirecciona a la pagina donde me dice que el usuario ha sido registrado como organizador
 #
 #	Background:
 #		Given que me dirijo a la pagina de registracion
 #		And seteo el nombre de usuario "usuarioevaluador"
 #		And seteo la contrasenia "123456"
 #		And seteo el email "usuarioevaluador@gmail.com"
-#		And seteo el rol "evaluador"
+#		And seteo el rol "Evaluador"
 #		When clickeo el boton de registrar usuario
-		#Then me redirecciona a la pagina donde me dice que el usuario ha sido registrado como evaluador
+#		Then me redirecciona a la pagina donde me dice que el usuario ha sido registrado como evaluador
 #
 #	Scenario: Logueo de usuario organizador con datos correctos
 #		Given que me dirijo a la pagina de logueo de usuarios
