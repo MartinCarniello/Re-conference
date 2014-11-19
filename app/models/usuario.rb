@@ -6,10 +6,7 @@ class Usuario
   property :nombre, String
   property :password, String
   property :email, String
-  # property :type, Discriminator
-
-  #validates_format_of   :email,    :with => :email_address
-  #validates_with_method :pass_segura?
+  property :rol, String
 
   def pass_segura?
     true
@@ -32,21 +29,5 @@ class Usuario
     return nil if !usuario
     usuario.password_igual_a(password) ? usuario : nil
   end
-
+  
 end
-
-# class Organizador < Usuario
-
-#   def crear_conferencia
-#     true
-#   end
-
-# end
-
-# class Evaluador < Usuario
-
-#   def crear_conferencia
-#     false
-#   end
-
-# end
