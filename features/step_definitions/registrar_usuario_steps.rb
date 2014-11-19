@@ -2,6 +2,10 @@ Given(/^que me dirijo a la pagina de registro de usuario$/) do
 	@browser.goto("localhost:3000/registrar_usuario")
 end
 
+Given(/^seteo el rol "(.*?)"$/) do |rol|
+	@browser.select(id: "usuario_rol_de_usuario").set rol
+end
+
 Given(/^ingreso "(.*?)" como nombre de usuario$/) do |nombre|
 	@browser.text_field(id: "usuario_nombre").set nombre
 end
