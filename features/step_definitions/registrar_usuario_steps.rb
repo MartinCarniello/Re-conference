@@ -3,7 +3,7 @@ Given(/^que me dirijo a la pagina de registro de usuario$/) do
 end
 
 Given(/^seteo el rol "(.*?)"$/) do |rol|
-	@browser.select(id: "usuario_rol_de_usuario").set rol
+	@browser.select_list(:id, "usuario_rol_de_usuario").select_value(rol)
 end
 
 Given(/^ingreso "(.*?)" como nombre de usuario$/) do |nombre|

@@ -26,6 +26,8 @@ gem 'dm-types'
 gem 'dm-core'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
+# gem 'simplecov', "0.8.0.pre"
+
 # Test requirements
 gem 'rspec', :group => 'test'
 gem 'cucumber', :group => 'test'

@@ -5,3 +5,7 @@ end
 Then(/^puedo ver la conferencia que he creado$/) do
 	expect(@browser.table.tr(index: 1).td.text).to match(/RubyConfTestVerConferencia/)
 end
+
+Then(/^no puedo ver las conferencias que se han creado$/) do
+	expect(@browser.table.trs.size).to eq(1)
+end

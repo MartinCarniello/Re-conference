@@ -2,6 +2,7 @@ Feature: Como usuario quiero poder registrarme como Evaluador u Organizador con 
 
 	Scenario: Crear usuario organizador exitosamente
 		Given que me dirijo a la pagina de registro de usuario
+		And seteo el rol "Organizador"
 		And ingreso "RegistrarUsuarioTest1" como nombre de usuario
 		And ingreso "RegistrarUsuarioTest1@gmail.com" como email
 		And ingreso "Password9" como contrasenia
@@ -11,7 +12,7 @@ Feature: Como usuario quiero poder registrarme como Evaluador u Organizador con 
 
 	Scenario: Crear usuario evaluador exitosamente
 		Given que me dirijo a la pagina de registro de usuario
-		And seteo el rol "evaluador"
+		And seteo el rol "Evaluador"
 		And ingreso "Andres" como nombre de usuario
 		And ingreso "andres73@gmail.com" como email
 		And ingreso "Password9" como contrasenia
@@ -21,8 +22,8 @@ Feature: Como usuario quiero poder registrarme como Evaluador u Organizador con 
 
 	Scenario: Crear usuario con un campo vacio, email
 		Given que me dirijo a la pagina de registro de usuario
+		And seteo el rol "Organizador"
 		And ingreso "RegistrarUsuarioTest2" como nombre de usuario
-		And seteo el rol "organizador"
 		And ingreso "Password9" como contrasenia
 		And confirmo la contrasenia "Password9"
 		When clickeo el boton de crear usuario
@@ -30,9 +31,9 @@ Feature: Como usuario quiero poder registrarme como Evaluador u Organizador con 
 
 	Scenario: Crear usuario con confirmacion de contrasenia invalida
 		Given que me dirijo a la pagina de registro de usuario
+		And seteo el rol "Organizador"
 		And ingreso "RegistrarUsuarioTest3" como nombre de usuario
 		And ingreso "RegistrarUsuarioTest3@gmail.com" como email
-		And seteo el rol "organizador"
 		And ingreso "Password9" como contrasenia
 		And confirmo la contrasenia "Password91"
 		When clickeo el boton de crear usuario
@@ -40,9 +41,9 @@ Feature: Como usuario quiero poder registrarme como Evaluador u Organizador con 
 
 	Scenario: Crear usuario con contrasenia poco segura
 		Given que me dirijo a la pagina de registro de usuario
+		And seteo el rol "Organizador"
 		And ingreso "RegistrarUsuarioTest4" como nombre de usuario
 		And ingreso "RegistrarUsuarioTest4@gmail.com" como email
-		And seteo el rol "organizador"
 		And ingreso "pass" como contrasenia
 		And confirmo la contrasenia "pass"
 		When clickeo el boton de crear usuario
