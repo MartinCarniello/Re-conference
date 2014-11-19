@@ -14,7 +14,7 @@ LaReConference::App.controllers :home do
     @usuario = Usuario.autenticar(nombre, password)
     
     if(!@usuario)
-      flash[:error] = 'Nombre de usuario y/o contraseña inválida'
+      flash[:error] = 'Nombre de usuario y/o contrasenia invalida'
       redirect '/'
     else
       login @usuario
