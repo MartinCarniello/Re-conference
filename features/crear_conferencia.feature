@@ -1,6 +1,6 @@
 Feature: Como usuario organizador de la conferencia, quiero poder crear una con su titulo, descripcion y fecha
 
-	Scenario: Se registra un usuario Organizador, se loguea en el sistema y se crea una conferencia
+	Scenario: Se registra un usuario Organizador
 		Given que me dirijo a la pagina de registro de usuario
 		And seteo el rol "Organizador"
 		And ingreso "CrearConferenciasCreadasUserTest" como nombre de usuario
