@@ -1,6 +1,6 @@
 <div class="jumbotron">
     
-  <h2 class="text-center"> Tabla de conferencias </h2>
+  <h2 class="text-center"> Conferencia </h2>
   
   <hr>
 
@@ -11,23 +11,19 @@
       <th class="text-center" align="center">Fecha</th>
       <th class="text-center" align="center">Visualizar</th>
     </tr>
-    <% @conferencias.each do | conferencia | %>
+
         <tr>
           
           <td align="center">
-            <%= conferencia.titulo %>
+            <%= @conferencia.titulo %>
           </td>
           
           <td align="center">
-            <%= conferencia.descripcion%>
+            <%= @conferencia.descripcion%>
           </td>
           
           <td align="center">
-            <%= conferencia.fecha%>
-          </td>
-
-          <td align="center">
-            <%= link_to "Ver", url(:ver, :id => conferencia.id),:class => "btn btn-primary btn-lg btn-info" %>
+            <%= @conferencia.fecha%>
           </td>
 
         </tr>
