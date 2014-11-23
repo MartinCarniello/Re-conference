@@ -13,6 +13,10 @@ if ['development', 'test', 'travis'].include?(PADRINO_ENV)
   task :all do
   ["rake spec", "rake cucumber"].each do |cmd|
     puts "Starting to run #{cmd}..."
+    system("RACK_ENV=test rake dm:drop")
+    system("RACK_ENV=test rake dm:create")
+    system("RACK_ENV=development rake dm:drop")
+    system("RACK_ENV=development rake dm:create")
     system("export DISPLAY=:99.0 && bundle exec #{cmd}")
     raise "#{cmd} failed!" unless $?.exitstatus == 0
     end

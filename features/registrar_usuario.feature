@@ -20,6 +20,16 @@ Feature: Como usuario quiero poder registrarme como Evaluador u Organizador con 
 		When clickeo el boton de crear usuario
 		Then me redirecciona a la pagina donde me dice que el usuario ha sido creado
 
+	Scenario: Crear usuario orador exitosamente
+		Given que me dirijo a la pagina de registro de usuario
+		And seteo el rol "Orador"
+		And ingreso "RegistrarUsuarioTest5" como nombre de usuario
+		And ingreso "RegistrarUsuarioTest5@gmail.com" como email
+		And ingreso "Password9" como contrasenia
+		And confirmo la contrasenia "Password9"
+		When clickeo el boton de crear usuario
+		Then me redirecciona a la pagina donde me dice que el usuario ha sido creado
+
 	Scenario: Crear usuario con un campo vacio, email
 		Given que me dirijo a la pagina de registro de usuario
 		And seteo el rol "Organizador"
