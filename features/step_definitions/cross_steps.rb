@@ -1,5 +1,5 @@
 # And(/^se borran los usuarios de la base de datos$/) do
-# 	Usuario.destroy
+# 	Account.destroy
 # end
 
 # And(/^se borran las conferencias de la base de datos$/) do

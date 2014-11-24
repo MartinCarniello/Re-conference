@@ -8,7 +8,7 @@
             <%= link_to 'Home', url_for(:home, :index), id: "home" %>
          </li>
          <% if logueado? %>
-            <% if usuario_actual.rol == "Organizador" %>
+            <% if usuario_actual.role == "organizador" %>
                <li class="<%= @crear_conferencia_active %>">
                   <%= link_to 'Crear Conferencia', url_for(:crear_conferencia, :crear_conferencia), id: "crear_conferencia" %>
                </li>

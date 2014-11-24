@@ -2,6 +2,7 @@ module LaReConference
   class App < Padrino::Application
     register Padrino::Mailer
     register Padrino::Helpers
+    register Padrino::Admin::AccessControl
 
     enable :sessions
 
@@ -61,5 +62,26 @@ module LaReConference
     #     render 'errors/500'
     #   end
     #
+
+    # access_control.roles_for :any do |role|
+    #     # role.protect '/crear_conferencia'
+    #     role.allow '/'
+    #     role.allow   '/registrar_usuario'
+    #     role.allow   '/ver_conferencias'
+    # end
+
+    access_control.roles_for :evaluador do |role|
+        role.protect   '/crear_conferencia'
+    end
+
+    access_control.roles_for :orador do |role|
+        role.protect '/'
+        role.protect   '/crear_conferencia'
+    end
+
+    access_control.roles_for :organizador do |role|
+      role.allow   '/crear_conferencia'
+    end
+
   end
 end

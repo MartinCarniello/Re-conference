@@ -2,7 +2,7 @@ Feature: Como usuario, quiero poder loguearme con mi nombre de usuario y contras
 
 	Scenario: Se registra un usuario Organizador
 		Given que me dirijo a la pagina de registro de usuario
-		And seteo el rol "Organizador"
+		And seteo el rol "organizador"
 		And ingreso "LoguearUsuarioTest" como nombre de usuario
 		And ingreso "LoguearUsuarioTest@gmail.com" como email
 		And ingreso "Password9" como contrasenia

@@ -2,7 +2,7 @@ Feature: Como Orador quiero poder subir una propuesta
 
 	Background:
 		Given que me dirijo a la pagina de registro de usuario
-		And seteo el rol "Organizador"
+		And seteo el rol "organizador"
 		And ingreso "SubirPropuestaTestOrganizador" como nombre de usuario
 		And ingreso "SubirPropuestaTestOrganizador@gmail.com" como email
 		And ingreso "Password9" como contrasenia
@@ -17,7 +17,7 @@ Feature: Como Orador quiero poder subir una propuesta
 		Given que me dirijo a la pagina home de la aplicacion
 		And me deslogueo
 		Given que me dirijo a la pagina de registro de usuario
-		And seteo el rol "Orador"
+		And seteo el rol "orador"
 		And ingreso "SubirPropuestaTestOrador" como nombre de usuario
 		And ingreso "SubirPropuestaTestOrador@gmail.com" como email
 		And ingreso "Password9" como contrasenia

@@ -3,7 +3,7 @@ Feature: Como usuario quiero que desde la home pueda navegar a las distintas pag
 	Scenario: Crea un usuario para poder navegar las distintas paginas
 		Given que me dirijo a la pagina de registro de usuario
 		#And se borran los usuarios de la base de datos
-		And seteo el rol "Organizador"
+		And seteo el rol "organizador"
 		And ingreso "HomeUserTest" como nombre de usuario
 		And ingreso "HomeUserTest@gmail.com" como email
 		And ingreso "Password9" como contrasenia

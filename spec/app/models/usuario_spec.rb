@@ -6,7 +6,7 @@ describe 'usuario' do
 	describe 'pass_segura?' do
 		it 'debe dar True siempre' do
 			
-			usuario = Usuario.new
+			usuario = Account.new
 
 			expect(usuario.pass_segura?).to eq(true)
 		end
@@ -14,19 +14,19 @@ describe 'usuario' do
 
 	describe 'validate_password' do
 		it 'debe dar True solo si su password es mas larga que 8 caracteres, tiene al menos una mayuscula y una minuscula' do
-			expect(Usuario.validate_password('Qqwe789asd')).to eq(true)
+			expect(Account.validate_password('Qqwe789asd')).to eq(true)
 		end
 
 		it 'debe dar False si y su password es mas corta que 8 caracteres' do
-			expect(Usuario.validate_password('Qqwe78')).to eq(false)
+			expect(Account.validate_password('Qqwe78')).to eq(false)
 		end
 
 		it 'debe dar False si y su password no contiene mayusculas' do
-			expect(Usuario.validate_password('qwe78qwe7')).not_to eq(true)
+			expect(Account.validate_password('qwe78qwe7')).not_to eq(true)
 		end
 
 		it 'debe dar False si y su password no contiene minusculas' do
-			expect(Usuario.validate_password('QWE798QWE7')).not_to eq(true)
+			expect(Account.validate_password('QWE798QWE7')).not_to eq(true)
 		end
 	end
 end

@@ -9,7 +9,6 @@
       <th class="text-center" align="center">Nombre</th>
       <th class="text-center" align="center">Descripción</th>
       <th class="text-center" align="center">Fecha</th>
-      <th class="text-center" align="center">Visualizar</th>
     </tr>
 
         <tr>
@@ -27,11 +26,58 @@
           </td>
 
         </tr>
-    <% end %>
   </table>
   
-  <br>
+  <hr>
+
+  <h3 class="text-center">Asignar evaluador</h3>
+
+  <% form_for(@evaluador, "/ver_una_conferencia/asignar_evaluador/#{@conferencia.id}", html: { class: "form-inline" }) do |f| %>
+
+      <div class="form-group" align="center">
+        <%= f.label :evaluador %>
+        <br>
+        <%= f.select :evaluador, :options => @evaluadores_select %>
+      </div>
+
+      <br/>
+      
+      <div align="center">
+        <%= f.submit "Asignar", :id => "account_evaluador_boton", class: "btn btn-primary btn-lg btn-info" %>
+      </div>
+     
+  <% end %>
+
+  <hr>
+
+  <h3 class="text-center">Evaluadores asignados</h3>
   
+  <table class="table table-striped" border="1">
+    <tr>
+      <th class="text-center" align="center">Nombre</th>
+      <th class="text-center" align="center">Email</th>
+    </tr>
+
+    <% @evaluadores_asignados.each do |evaluador| %>
+      
+      <tr>
+          
+        <td align="center">
+          <%= evaluador.nombre %>
+        </td>
+        
+        <td align="center">
+          <%= evaluador.email%>
+        </td>
+        
+      </tr>
+
+    <% end %>
+
+  </table>
+
+  <hr>
+
   <div class="text-center">
     <%= link_to "Volver", url(:home, :index), :class => "btn btn-primary btn-lg btn-info" %>
   </div>

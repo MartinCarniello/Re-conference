@@ -1,25 +1,25 @@
 LaReConference::App.controllers :registrar_usuario do
   
   get :registrar_usuario, :map => '/registrar_usuario' do
-    @usuario = Usuario.new
+    @usuario = Account.new
     render 'registrar_usuario/index'
   end
 
   post :create do
     
-      nombre = params[:usuario][:nombre]
-      email = params[:usuario][:email]
-      password = params[:usuario][:password]
-      confirme_password = params[:usuario][:confirme_password]
-      rol = params[:usuario][:rol_de_usuario]
+      nombre = params[:account][:nombre]
+      email = params[:account][:email]
+      password = params[:account][:password]
+      confirme_password = params[:account][:confirme_password]
+      rol = params[:account][:rol_de_usuario]
 
-      if !Usuario.first(nombre: nombre)
+      if !Account.first(nombre: nombre)
 
         if (password == confirme_password)
 
-          if Usuario.validate_password(password)
+          if Account.validate_password(password)
 
-            @usuario = Usuario.new(nombre: nombre, password: password, email: email, role: rol)
+            @usuario = Account.new(nombre: nombre, password: password, email: email, role: rol)
 
             (tipo_flash, mensaje) = (@usuario.save ? [:success, 'Usuario creado'] : [:error, 'Todos los campos son obligatorios, asegurese de que su password incluya al menos 1 mayuscula, 1 minuscula y sea de al menos 8 caracteres'])
 

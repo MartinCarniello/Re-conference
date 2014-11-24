@@ -18,12 +18,12 @@
 # DataMapper::Logger.new($stdout, :all)
 # DataMapper.auto_migrate!
 
-# organizador = Usuario.create(nombre: 'UsuarioOrganizador',
+# organizador = Account.create(nombre: 'UsuarioOrganizador',
 #                    email: 'UsuarioOrganizador@Gmail.com', 
 #                    password: "Password1",
 #                    rol: "Organizador")
 
-# evaluador = Usuario.create(nombre: 'UsuarioEvaluador',
+# evaluador = Account.create(nombre: 'UsuarioEvaluador',
 #                    email: 'UsuarioEvaluador@Gmail.com', 
 #                    password: "Password1",
 #                    rol: "Evaluador")

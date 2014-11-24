@@ -1,12 +1,19 @@
-class Usuario
+class Account
   include DataMapper::Resource
+
+  # Available roles
+  ORGANIZADOR = 'organizador'
+  EVALUADOR = 'evaluador'
+  ORADOR = 'orador'
 
   # property <name>, <type>
   property :id, Serial
   property :nombre, String
   property :password, String
   property :email, String
-  property :rol, String
+  property :role, String
+
+  has n, :conferencias, :through => Resource
 
   def pass_segura?
     true
@@ -25,9 +32,17 @@ class Usuario
   end
 
   def self.autenticar(nombre, password)
-    usuario = Usuario.first(nombre: nombre)
+    usuario = Account.first(nombre: nombre)
     return nil if !usuario
     usuario.password_igual_a(password) ? usuario : nil
+  end
+
+  def self.find_by_id(id)
+    get(id) rescue nil
+  end
+
+  def self.find_by_roles(role)
+    self.all(role: role)
   end
   
 end

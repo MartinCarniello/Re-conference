@@ -2,7 +2,7 @@ Feature: Como Organizador quiero poder asignarle una de mis conferencias a un Ev
 
 	Background:
 		Given que me dirijo a la pagina de registro de usuario
-		And seteo el rol "Organizador"
+		And seteo el rol "organizador"
 		And ingreso "AsignarConferenciaAEvaluadorTestOrganizador" como nombre de usuario
 		And ingreso "AsignarConferenciaAEvaluadorTestOrganizador@gmail.com" como email
 		And ingreso "Password9" como contrasenia
@@ -17,7 +17,7 @@ Feature: Como Organizador quiero poder asignarle una de mis conferencias a un Ev
 		Given que me dirijo a la pagina home de la aplicacion
 		And me deslogueo
 		Given que me dirijo a la pagina de registro de usuario
-		And seteo el rol "Evaluador"
+		And seteo el rol "evaluador"
 		And ingreso "AsignarConferenciaAEvaluadorTestEvaluador" como nombre de usuario
 		And ingreso "AsignarConferenciaAEvaluadorTestEvaluador@gmail.com" como email
 		And ingreso "Password9" como contrasenia
@@ -28,8 +28,8 @@ Feature: Como Organizador quiero poder asignarle una de mis conferencias a un Ev
 		Given que me dirijo a la pagina home de la aplicacion
 		And me logueo como AsignarConferenciaAEvaluadorTestOrganizador con contrasenia Password9
 		And me dirijo al detalle de la conferencia con titulo RubyConfTestAsignarConferenciaAEvaluador
-		When asigno la conferencia a un evaluador
-		And me deslogueo de la aplicacion
+		When asigno la conferencia al evaluador AsignarConferenciaAEvaluadorTestEvaluador
+		And me deslogueo
 		And me logueo como AsignarConferenciaAEvaluadorTestEvaluador con contrasenia Password9
 		And me dirijo a la pagina de ver asignaciones
 		Then deberia tener asignada la conferencia RubyConfTestAsignarConferenciaAEvaluador

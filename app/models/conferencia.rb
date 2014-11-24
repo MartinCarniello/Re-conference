@@ -7,4 +7,6 @@ class Conferencia
   property :descripcion, String, required: true
   property :fecha, Date, required: true
 
+  has n, :accounts, :through => Resource
+
 end

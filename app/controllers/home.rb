@@ -3,15 +3,15 @@ LaReConference::App.controllers :home do
   get :index, :map => '/' do
     @home_active = "active"
     @crear_usuario_active = "active"
-    @usuario = Usuario.new
+    @usuario = Account.new
     render 'home/index'
   end
 
   post :login do
-    nombre = params[:usuario][:nombre]
-    password = params[:usuario][:password]
+    nombre = params[:account][:nombre]
+    password = params[:account][:password]
 
-    @usuario = Usuario.autenticar(nombre, password)
+    @usuario = Account.autenticar(nombre, password)
     
     if(!@usuario)
       flash[:error] = 'Nombre de usuario y/o contrasenia invalida'

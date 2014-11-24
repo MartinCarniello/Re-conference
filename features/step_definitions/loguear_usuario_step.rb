@@ -1,6 +1,6 @@
 And(/^me logueo como (.+) con contrasenia (.+)$/) do |usuario, contrasenia|
-	@browser.text_field(id: "usuario_nombre").set usuario
-	@browser.text_field(id: "usuario_password").set contrasenia
+	@browser.text_field(id: "account_nombre").set usuario
+	@browser.text_field(id: "account_password").set contrasenia
 	@browser.button(id: "usuario_login").click
 end
 

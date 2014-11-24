@@ -2,7 +2,7 @@ Feature: Como usuario, quiero poder ver todas las conferencias que han sido crea
 
 	Scenario: Se registra un usuario Organizador, se loguea en el sistema y se crea una conferencia
 		Given que me dirijo a la pagina de registro de usuario
-		And seteo el rol "Organizador"
+		And seteo el rol "organizador"
 		And ingreso "VerConferenciasCreadasUserTest" como nombre de usuario
 		And ingreso "VerConferenciasCreadasUserTest@gmail.com" como email
 		And ingreso "Password9" como contrasenia
@@ -27,7 +27,7 @@ Feature: Como usuario, quiero poder ver todas las conferencias que han sido crea
 
 	Scenario: Se registra un usuario Evaluador y se loguea en el sistema
 		Given que me dirijo a la pagina de registro de usuario
-		And seteo el rol "Evaluador"
+		And seteo el rol "evaluador"
 		And ingreso "VerConferenciasCreadasUserTest2" como nombre de usuario
 		And ingreso "VerConferenciasCreadasUserTest2@gmail.com" como email
 		And ingreso "Password9" como contrasenia

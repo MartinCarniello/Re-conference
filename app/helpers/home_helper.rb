@@ -8,7 +8,7 @@ module LaReConference
 		end
 
 		def usuario_actual
-			@usuario_actual ||= Usuario.first(id: session[:usuario_actual])
+			@usuario_actual ||= Account.first(id: session[:usuario_actual])
 		end
 		
 		def login(usuario)

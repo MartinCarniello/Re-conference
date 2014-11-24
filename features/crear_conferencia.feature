@@ -2,7 +2,7 @@ Feature: Como usuario organizador de la conferencia, quiero poder crear una con 
 
 	Scenario: Se registra un usuario Organizador
 		Given que me dirijo a la pagina de registro de usuario
-		And seteo el rol "Organizador"
+		And seteo el rol "organizador"
 		And ingreso "CrearConferenciasCreadasUserTest" como nombre de usuario
 		And ingreso "CrearConferenciasCreadasUserTest@gmail.com" como email
 		And ingreso "Password9" como contrasenia
