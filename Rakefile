@@ -13,7 +13,8 @@ if ['development', 'test', 'travis'].include?(PADRINO_ENV)
   task :all do
   ["rake spec", "rake cucumber"].each do |cmd|
     puts "Starting to run #{cmd}..."
-    # system("RACK_ENV=test rake dm:auto:migrate")
+    system("RACK_ENV=test rake dm:auto:migrate")
+    system("RACK_ENV=development rake dm:auto:migrate")
     system("export DISPLAY=:99.0 && bundle exec #{cmd}")
     raise "#{cmd} failed!" unless $?.exitstatus == 0
     end
@@ -22,6 +23,8 @@ if ['development', 'test', 'travis'].include?(PADRINO_ENV)
   task :travis do
   ["rake spec_report", "rake cucumber"].each do |cmd|
     puts "Starting to run #{cmd}..."
+    system("RACK_ENV=test rake dm:auto:migrate")
+    system("RACK_ENV=development rake dm:auto:migrate")
     system("export DISPLAY=:99.0 && bundle exec #{cmd}")
     raise "#{cmd} failed!" unless $?.exitstatus == 0
     end
