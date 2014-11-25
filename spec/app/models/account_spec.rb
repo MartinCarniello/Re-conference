@@ -1,7 +1,7 @@
 require 'spec_helper'
-require_relative '../../../app/models/usuario.rb'
+require_relative '../../../app/models/account.rb'
 
-describe 'usuario' do
+describe 'account' do
 
 	describe 'pass_segura?' do
 		it 'debe dar True siempre' do

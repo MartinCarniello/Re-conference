@@ -29,7 +29,4 @@ Feature: Como Organizador quiero poder asignarle una de mis conferencias a un Ev
 		And me logueo como AsignarConferenciaAEvaluadorTestOrganizador con contrasenia Password9
 		And me dirijo al detalle de la conferencia con titulo RubyConfTestAsignarConferenciaAEvaluador
 		When asigno la conferencia al evaluador AsignarConferenciaAEvaluadorTestEvaluador
-		And me deslogueo
-		And me logueo como AsignarConferenciaAEvaluadorTestEvaluador con contrasenia Password9
-		And me dirijo a la pagina de ver asignaciones
-		Then deberia tener asignada la conferencia RubyConfTestAsignarConferenciaAEvaluador
+		Then deberia tener asignada la conferencia RubyConfTestAsignarConferenciaAEvaluador al evaluador AsignarConferenciaAEvaluadorTestEvaluador

@@ -10,8 +10,7 @@ LaReConference::App.controllers :ver_una_conferencia do
       array.push(evaluador.nombre) if !@evaluadores_asignados.include?(evaluador)
       array
     end
-                            # .select { |evaluador| !@evaluadores_asignados.include?(evaluador) }
-                            # .map { |evaluador| evaluador.nombre }
+
     render 'ver_una_conferencia/index'
   end
 
@@ -24,9 +23,12 @@ LaReConference::App.controllers :ver_una_conferencia do
     conferencia.accounts.push(evaluador)
     evaluador.conferencias.push(conferencia)
 
-    if !conferencia.save || !evaluador.save
+    if conferencia.save
+      flash[:success] = "El evaluador ha sido asignado a la conferencia"
+      redirect "ver_una_conferencia/#{conferencia.id}"
+    else
       flash[:error] = "Ha habido un error para guardar la conferencia o el evaluador"
-      redirect "ver_una_conferencia/#{@conferencia.id}"
+      redirect "ver_una_conferencia/#{conferencia.id}"
     end
   end
   

@@ -7,7 +7,7 @@ class Account
   ORADOR = 'orador'
 
   # property <name>, <type>
-  property :id, Serial
+  property :id, Serial, :unique => true
   property :nombre, String
   property :password, String
   property :email, String
