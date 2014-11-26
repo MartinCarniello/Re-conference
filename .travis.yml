@@ -6,8 +6,7 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
   - bundle exec padrino start & # start a Web server
-  - PADRINO_ENV=development bundle exec rake dm:auto:migrate
-  - PADRINO_ENV=test bundle exec rake dm:auto:migrate
+  - PADRINO_ENV=travis bundle exec rake dm:auto:migrate
   - sleep 3 # give Web server some time to bind to sockets, etc
 
 script: PADRINO_ENV=travis bundle exec rake
