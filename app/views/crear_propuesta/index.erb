@@ -1,0 +1,35 @@
+<div class="jumbotron">
+	<h2 class="text-center"> Nueva propuesta </h2>
+
+	<hr>
+
+	<% form_for(@propuesta, '/crear_propuesta/create', html: { class: "form-inline" }) do |f| %>
+		<div class="form-group">
+			<%= f.label :título %>
+			<br>
+			<%= f.text_field :titulo, class: "form-control", placeholder: "Título de la propuesta", required: true %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :resumen %>
+			<br>
+		 	<%= f.text_field :descripcion, class: "form-control", placeholder: "Resumen de la propuesta", required: true %>
+		</div>
+
+		<div>
+
+			<h4 class="text-left">Suba su propuesta</h4>
+
+  			<form method="post" enctype="multipart/form-data">
+    			<input type=file size=60 name="Su archivo">
+    			<input type=submit value="Subir propuesta">
+  			</form>
+  		</div>
+
+		<div class="text-center">
+
+		    <%= link_to "Volver", url(:ver_conferencias, :ver_conferencias), :class => "btn btn-primary btn-lg btn-info" %>
+		</div>
+	 
+	<% end %>
+</div>

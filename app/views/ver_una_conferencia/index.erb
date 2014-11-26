@@ -1,6 +1,6 @@
 <div class="jumbotron">
     
-  <h2 class="text-center"> Conferencia </h2>
+  <h2 class="text-center"> <%= @conferencia.titulo %> </h2>
   
   <hr>
 
@@ -28,8 +28,16 @@
         </tr>
   </table>
   
-  <hr>
+  <% if usuario_actual.role == "orador" %>
+  <div class="text-center" align="left">
+        <%= link_to 'Agregue su propuesta', url_for(:crear_propuesta, :crear_propuesta, :id_conferencia => @conferencia.id), id: "create_propuesta", class: "btn btn-primary btn-lg btn-info" %>
+      </div>
 
+  <hr>
+  <% end %>
+
+
+  <% if usuario_actual.role == "organizador" %>
   <h3 class="text-center">Asignar evaluador</h3>
 
   <% form_for(@evaluador, "/ver_una_conferencia/asignar_evaluador/#{@conferencia.id}", html: { class: "form-inline" }) do |f| %>
@@ -46,6 +54,7 @@
         <%= f.submit "Asignar", :id => "account_evaluador_boton", class: "btn btn-primary btn-lg btn-info" %>
       </div>
      
+  <% end %>
   <% end %>
 
   <hr>
