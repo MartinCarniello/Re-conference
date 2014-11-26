@@ -37,4 +37,5 @@ case Padrino.env
   when :development then DataMapper.setup(:default, "sqlite3://" + Padrino.root('db', "la_re_conference_development.db"))
   when :production  then DataMapper.setup(:default, "sqlite3://" + Padrino.root('db', "la_re_conference_production.db"))
   when :test        then DataMapper.setup(:default, "sqlite3://" + Padrino.root('db', "la_re_conference_test.db"))
+  when :travis      then DataMapper.setup(:default, "sqlite3://" + Padrino.root('db', "la_re_conference_travis.db"))
 end
