@@ -5,15 +5,18 @@ end
 
 When(/^asigno la conferencia al evaluador (.+)$/) do |evaluador|
 	if @browser.div(id: "backtrace").present?
-		$stdout.puts "TIRO ERROR LA PAGINA desde stdout"
-		$stderr.puts "TIRO ERROR LA PAGINA desde stderr"
-		print("TIRO ERROR LA PAGINA\n")
+		# step "TIRO ERROR LA PAGINA"
+		# $stdout.puts "TIRO ERROR LA PAGINA desde stdout"
+		# $stderr.puts "TIRO ERROR LA PAGINA desde stderr"
+		# print("TIRO ERROR LA PAGINA\n")
 
 		msg = @browser.div(id: "rack").table.tr(index: 41).td(class: "code").div.text
 
-		print(msg)
-		$stdout.puts msg
-		$stderr.puts msg
+		step msg
+
+		# print(msg)
+		# $stdout.puts msg
+		# $stderr.puts msg
 	end
 
 	@browser.select_list(:id, "account_evaluador").select_value(evaluador)
