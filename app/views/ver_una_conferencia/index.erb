@@ -57,6 +57,28 @@
   <% end %>
   <% end %>
 
+  <h3 class="text-center">Propuestas subidas</h3>
+
+  <table class="table table-striped" border="1">
+    <tr>
+      <th class="text-center" align="center">Nombre</th>
+      <th class="text-center" align="center">Visualizar</th>
+    </tr>
+    <% @propuestas.each do | propuesta | %>
+        <tr>
+          
+          <td align="center">
+            <%= propuesta.titulo %>
+          </td>
+
+          <td align="center">
+            <%= link_to "Ver", url(:ver_una_conferencia, :ver_conferencia, :id_conferencia => conferencia.id),:class => "btn btn-primary btn-lg btn-info" %>
+          </td>
+
+        </tr>
+    <% end %>
+  </table>
+
   <hr>
 
   <h3 class="text-center">Evaluadores asignados</h3>

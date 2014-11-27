@@ -3,7 +3,7 @@
 
 	<hr>
 
-	<% form_for(@propuesta, '/crear_propuesta/create', html: { class: "form-inline" }) do |f| %>
+	<% form_for(@propuesta, '/crear_propuesta/create/#{@conferencia.id}', html: { class: "form-inline" }) do |f| %>
 		<div class="form-group">
 			<%= f.label :título %>
 			<br>
@@ -11,24 +11,24 @@
 		</div>
 
 		<div class="form-group">
-			<%= f.label :resumen %>
+			<%= f.label :descripcion %>
 			<br>
 		 	<%= f.text_field :descripcion, class: "form-control", placeholder: "Resumen de la propuesta", required: true %>
 		</div>
 
-		<div>
 
-			<h4 class="text-left">Suba su propuesta</h4>
 
-  			<form method="post" enctype="multipart/form-data">
-    			<input type=file size=60 name="Su archivo">
-    			<input type=submit value="Subir propuesta">
-  			</form>
-  		</div>
+			<!--<h4 class="text-left">Suba su propuesta</h4>-->
+
+  			<!--<form method="post" enctype="multipart/form-data">-->
+    			<!--<input type=file size=60 name="Su archivo">-->
+    			<!--<input type=submit value="Subir propuesta"> -->
+    			<!-- <%= f.submit "Crear", :id => "create_propuesta", class: "btn btn-primary btn-lg btn-info" %> -->
+  			<!--</form>-->
 
 		<div class="text-center">
-
-		    <%= link_to "Volver", url(:ver_conferencias, :ver_conferencias), :class => "btn btn-primary btn-lg btn-info" %>
+			<%= f.submit "Crear", :id => "create_propuesta", class: "btn btn-primary btn-lg btn-info" %>
+		    <%= link_to "Volver", url(:ver_una_conferencia, :ver_conferencia, :id_conferencia => @propuesta.conferencia.id), :class => "btn btn-primary btn-lg btn-info" %>
 		</div>
 	 
 	<% end %>
