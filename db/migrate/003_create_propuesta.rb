@@ -4,6 +4,7 @@ migration 3, :create_propuesta do
       column :id, Integer, :serial => true
       column :titulo, DataMapper::Property::String, :length => 255
       column :descripcion, DataMapper::Property::String, :length => 255
+      
     end
   end
 

@@ -1,5 +1,5 @@
 #Feature: Como Orador quiero poder subir una propuesta
-
+#
 #	Background:
 #		Given que me dirijo a la pagina de registro de usuario
 #		And seteo el rol "organizador"
@@ -23,15 +23,15 @@
 #		And ingreso "Password9" como contrasenia
 #		And confirmo la contrasenia "Password9"
 #		When clickeo el boton de crear usuario
-
+#
 #	Scenario: Subir propuesta a una conferencia
 #		Given que me dirijo a la pagina home de la aplicacion
 #		And me logueo como SubirPropuestaTestOrador con contrasenia Password9
 #		Given que me dirijo a la pagina de ver conferencias
 #		And me dirijo al detalle de la conferencia con titulo RubyConfTestSubirPropuesta
-#		And clickeo el boton de agregar propuesta
+#		When clickeo el boton de agregar propuesta
 #		Then deberia estar en la pagina de creacion de una propuesta
 #		And seteo el nombre de la propuesta "RubyConfTestSubirPropuestaPropuesta1"
-#		And seteo el resumen de la propuesta "RubyConfTestSubirPropuestaPropuesta1Resumen"		
+#		And seteo el resumen de la propuesta "RubyConfTestSubirPropuestaPropuesta1Resumen"
 #		When clickeo crear propuesta
 #		Then me deberia redirijir al detalle de la conferencia donde deberia estar la propuesta creada

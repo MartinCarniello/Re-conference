@@ -10,5 +10,4 @@ class Conferencia
   has n, :accounts, :through => Resource
   has n, :propuestas, :through => Resource
 
-
 end
