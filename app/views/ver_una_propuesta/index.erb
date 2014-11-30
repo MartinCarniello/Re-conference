@@ -1,0 +1,99 @@
+<div class="jumbotron">
+    
+  <h2 class="text-center"> <%= @propuesta.titulo %> </h2>
+  
+  <hr>
+
+  <table class="table table-striped" id="tabla_propuesta" border="1">
+    <tr>
+      <th class="text-center" align="center">Nombre</th>
+      <th class="text-center" align="center">Descripción</th>
+
+    </tr>
+
+        <tr>
+          
+          <td align="center">
+            <%= @propuesta.titulo %>
+          </td>
+          
+          <td align="center">
+            <%= @propuesta.descripcion%>
+          </td>
+        </tr>
+  </table>
+
+  <h3 class="text-center">Evaluadores asignados</h3>
+  
+  <table class="table table-striped" id="tabla_evaluadores" border="1">
+    <tr>
+      <th class="text-center" align="center">Nombre</th>
+      <th class="text-center" align="center">Email</th>
+      <th class="text-center" align="center">Calificacion otorgada</th>
+    </tr>
+
+    <% @evaluadores_asignados.each do |evaluador| %>
+      
+      <tr>
+          
+        <td align="center">
+          <%= evaluador.nombre %>
+        </td>
+        
+        <td align="center">
+          <%= evaluador.email%>
+        </td>
+        
+        <td align="center">
+          
+           <select>
+              <option value="pendiente">Pendiente</option>
+              <option value="aprobado">Aprobado</option>
+              <option value="desaprobado">Desaprobado</option>
+          </select> 
+          
+        </td>
+
+      </tr>
+
+    <% end %>
+
+  </table>
+
+  <h3 class="text-center">Comentarios</h3>
+  
+  <table class="table table-striped" id="tabla_evaluadores" border="1">
+    <tr>
+      <th class="text-center" align="center">Nombre</th>
+      <th class="text-center" align="center">Comentario</th>
+    </tr>
+
+  </table>
+
+  <h4 class="text-left">Deja un comentario</h4>
+
+  <% form_for(@comentario, "/ver_una_propuesta/comentar/", html: { class: "form-inline" }) do |f| %>
+
+    <div class="form-group">
+      <%= f.label :evaluador %>
+      <%= usuario_actual.nombre %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :comentario %>
+      <br>
+      <%= f.text_field :contenido, class: "form-control", placeholder: "Escribe un comentario", required: true %>
+    </div>
+
+    <div class="text-right">
+      <%= f.submit "Comentar", :id => "comentario_crear", class: "btn btn-primary btn-lg btn-info" %>
+    </div>
+   
+  <% end %>
+
+  <hr>
+
+  <div class="text-center">
+    <%= link_to "Volver", url(:ver_conferencias, :ver_conferencias), :class => "btn btn-primary btn-lg btn-info" %>
+  </div>
+</div>

@@ -5,7 +5,9 @@ LaReConference::App.controllers :ver_una_conferencia do
   	@conferencia = Conferencia.first(id: params[:id_conferencia])
     @evaluador = Account.new
     @evaluadores_asignados = @conferencia.accounts
+
     @propuestas = @conferencia.propuestas
+    @propuestas.push(Propuesta.create(titulo: "rubys", descripcion: "confersss", conferencia: @conferencia))
 
     @evaluadores_select = Account.find_by_roles("evaluador").inject([]) do |array, evaluador|
       array.push(evaluador.nombre) if !@evaluadores_asignados.include?(evaluador)
