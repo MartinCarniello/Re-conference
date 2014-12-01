@@ -18,7 +18,7 @@ LaReConference::App.controllers :crear_propuesta do
     	propuesta = Propuesta.create(titulo: titulo, descripcion: descripcion, conferencia: conferencia)
 
     	if propuesta.save
-          @conferencia.propuestas.push(propuesta)
+          conferencia.propuestas.push(propuesta)
       		flash[:success] = 'Propuesta creada'
       		redirect "ver_una_conferencia/#{conferencia.id}"
     	else

@@ -3,7 +3,7 @@
 
 	<hr>
 
-	<% form_for(@propuesta, '/crear_propuesta/create/#{@conferencia.id}', html: { class: "form-inline" }) do |f| %>
+	<% form_for(@propuesta, "/crear_propuesta/create/#{@conferencia.id}", html: { class: "form-inline" }) do |f| %>
 		<div class="form-group">
 			<%= f.label :título %>
 			<br>
