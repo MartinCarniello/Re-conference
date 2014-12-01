@@ -21,10 +21,10 @@
     			<!--<input type=submit value="Subir propuesta" class="btn btn-primary btn-lg btn-info"> -->
     			<!-- <%= f.submit "Crear", :id => "create_propuesta", class: "btn btn-primary btn-lg btn-info" %> -->
   			<!--</form>-->
-
+  		<br/>
 		<div class="text-center">
-			<%= f.submit "Crear", :id => "create_propuesta", class: "btn btn-primary btn-lg btn-info" %>
-		    <%= link_to "Volver", url(:ver_una_conferencia, :ver_conferencia, :id_conferencia => @propuesta.conferencia.id), :class => "btn btn-primary btn-lg btn-info" %>
+			<%= f.submit "Crear", :id => "propuesta_crear", class: "btn btn-primary btn-lg btn-info" %>
+		    <%= link_to "Volver", url(:ver_una_conferencia, :ver_conferencia, :id_conferencia => @conferencia.id), :class => "btn btn-primary btn-lg btn-info" %>
 		</div>
 	 
 	<% end %>

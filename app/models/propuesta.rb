@@ -6,5 +6,6 @@ class Propuesta
   property :titulo, String, required: true
   property :descripcion, String, required: true
 
+  has n, :comentarios
   belongs_to :conferencia
 end

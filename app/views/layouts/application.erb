@@ -14,7 +14,7 @@
 		<div class="container contenedor-opciones">
 			<div class="error" id="zen-preamble" role="article">
 				<h3>
-					<%= [:error, :warning, :notice].map { |type| flash_tag(type, :class => "alert alert-#{type} fade in", :bootstrap => false) }.join.html_safe %>	
+					<%= [:danger, :warning, :info].map { |type| flash_tag(type, :class => "alert alert-#{type} fade in", :bootstrap => false) }.join.html_safe %>	
 				</h3>
 			</div>
 			

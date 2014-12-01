@@ -5,6 +5,7 @@ LaReConference::App.controllers :ver_una_conferencia do
   	@conferencia = Conferencia.first(id: params[:id_conferencia])
     @evaluador = Account.new
     @evaluadores_asignados = @conferencia.accounts
+
     @propuestas = @conferencia.propuestas
 
     @evaluadores_select = Account.find_by_roles("evaluador").inject([]) do |array, evaluador|
@@ -28,7 +29,7 @@ LaReConference::App.controllers :ver_una_conferencia do
       flash[:success] = "El evaluador ha sido asignado a la conferencia"
       redirect "ver_una_conferencia/#{conferencia.id}"
     else
-      flash[:error] = "Ha habido un error para guardar la conferencia o el evaluador"
+      flash[:danger] = "Ha habido un error para guardar la conferencia o el evaluador"
       redirect "ver_una_conferencia/#{conferencia.id}"
     end
   end

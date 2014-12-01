@@ -17,7 +17,7 @@ LaReConference::App.controllers :crear_conferencia do
       		flash[:success] = 'Conferencia creada'
       		redirect '/'
     	else
-      		flash.now[:error] = 'No se ha podido crear la conferencia'
+      		flash.now[:danger] = 'No se ha podido crear la conferencia'
       		render 'crear_conferencia/index'
     	end
   	end
