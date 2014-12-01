@@ -14,9 +14,9 @@ source 'https://rubygems.org'
 gem 'rake'
 
 # Component requirements
-gem 'dm-sqlite-adapter'
+gem 'dm-sqlite-adapter', :group => 'test'
 gem 'erubis', '~> 2.7.0'
-# gem 'dm-postgres-adapter'
+gem 'dm-postgres-adapter'
 gem 'dm-validations'
 gem 'dm-timestamps'
 gem 'dm-migrations'
