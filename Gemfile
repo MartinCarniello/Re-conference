@@ -14,7 +14,7 @@ source 'https://rubygems.org'
 gem 'rake'
 
 # Component requirements
-gem 'dm-sqlite-adapter'
+gem 'dm-sqlite-adapter' , :group => 'test'
 gem 'erubis', '~> 2.7.0'
 # gem 'dm-postgres-adapter'
 gem 'dm-validations'
@@ -40,6 +40,9 @@ gem 'padrino', '0.12.4'
 
 # Debugger
 # gem 'debugger'
+
+#herokui
+gem 'dm-postgres-adapter', :group => :production
 
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'
