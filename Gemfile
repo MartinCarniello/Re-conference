@@ -41,6 +41,11 @@ gem 'padrino', '0.12.4'
 # Debugger
 # gem 'debugger'
 
+#herokui
+
+#gem 'dm-postgres-adapter', :group => :production
+
+
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'
 
