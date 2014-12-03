@@ -29,9 +29,15 @@ if ['development', 'test', 'travis'].include?(PADRINO_ENV)
     end
   end
 
+  task :db_migrate do
+    puts "Starting to auto migrate test and development databases..."
+    system("RACK_ENV=test rake dm:auto:migrate")
+    system("RACK_ENV=development rake dm:auto:migrate")
+  end
+
   require 'cucumber/rake/task'
   Cucumber::Rake::Task.new(:cucumber) do |task|
-    task.cucumber_opts = ["features"]
+    task.cucumber_opts = ["features", '-s']
   end
 
   Cucumber::Rake::Task.new(:cucumber_report) do |task|

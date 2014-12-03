@@ -50,9 +50,11 @@
 
       <br/>
       
-      <div align="center">
-        <%= f.submit "Asignar", :id => "account_evaluador_boton", class: "btn btn-primary btn-lg btn-info" %>
-      </div>
+      <% if !@evaluadores_select.empty? %>
+        <div align="center">
+          <%= f.submit "Asignar", :id => "account_evaluador_boton", class: "btn btn-primary btn-lg btn-info" %>
+        </div>
+      <% end %>
      
   <% end %>
   <% end %>
