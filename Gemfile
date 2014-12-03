@@ -43,7 +43,7 @@ gem 'padrino', '0.12.4'
 
 #herokui
 
-#gem 'dm-postgres-adapter', :group => :production
+gem 'dm-postgres-adapter', :group => :production
 
 
 # Or Padrino Edge
