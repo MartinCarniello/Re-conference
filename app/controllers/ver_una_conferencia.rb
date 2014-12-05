@@ -5,7 +5,6 @@ LaReConference::App.controllers :ver_una_conferencia do
   	@conferencia = Conferencia.first(id: params[:id_conferencia])
     @evaluador = Account.new
     @evaluadores_asignados = @conferencia.accounts
-
     @propuestas = @conferencia.propuestas
 
     @evaluadores_select = Account.find_by_roles("evaluador").inject([]) do |array, evaluador|

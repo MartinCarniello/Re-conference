@@ -45,6 +45,10 @@ Before do |scenario|
 	end
 end
 
+After do |scenario|
+	@browser.close
+end
+
 at_exit do
 	headless.destroy
 end
